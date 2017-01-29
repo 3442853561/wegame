@@ -32,18 +32,27 @@
 		</style>
 	</head>
 	<body style="background-color:#000000;">
+		<h1 id="del">诶呀</h1>
+		<h2 id="del">居然打不开啦</h2>
+		<a id="del" href="#">技术帮助</a>
 		<canvas class="gamecanvas" id="mygame">
-			<div>
-				<h1>诶呀</h1>
-				<h2>居然打不开啦</h2>
-				<a href="#">技术帮助</a>
-				<p>
-					您的浏览器版本过低<br/>
-					推荐您使用最新版本的火狐浏览器
-				</p>
-				<img src="img/0.png" alt="加载失败"></img>
-			</div>
+			<p>
+				您的浏览器版本过低
+			</p>
 		</canvas>
+		<noscript>
+			<p>
+				您的浏览器不支持JavaScript
+			</p>
+		</noscript>
+		<p id="del">推荐您使用最新版本的火狐浏览器</p>
+		<img id="del" src="img/0.png" alt="加载失败"></img>
+		<script type="text/JavaScript">
+			var delid=document.getElementById("del");
+			for(i=0;i<5;i++){
+				delid[i].parentNode.removeChild(delid[i]);
+			}
+		</script>
 		<script type="text/JavaScript">
 			window.onload=function(){  
 				game_reset();  
@@ -72,17 +81,5 @@
 			}
 		</script>
 		{{ content }}
-		<noscript>
-			<div>
-				<h1>诶呀</h1>
-				<h2>居然打不开啦</h2>
-				<a href="#">技术帮助</a>
-				<p>
-					您的浏览器不支持JavaScript<br/>
-					推荐您使用最新版本的火狐浏览器
-				</p>
-				<img src="img/0.png" alt="加载失败"></img>
-			</div>
-		</noscript>
 	</body>
 </html>
