@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ page.title }}</title>
+		<meta charset="utf-8">
+		<style>
+			.gamecanvas{
+				position:absolute;
+				border:1px solid #333333;
+				z-index:1;
+				top:0px;
+				left:0px;
+			}
+			div{
+				color:#ffffff;
+				text-align:center;
+			}
+			h1{
+				font-size:80px;
+			}
+			h2{
+				font-size:36px;
+			}
+			a{
+				color:#ffffff;
+				text-decoration:none;
+				font-size:18px;
+			}
+			p{
+				font-size:18px;
+			}
+		</style>
+	</head>
+	<body style="background-color:#000000;">
+		<canvas class="gamecanvas" id="mygame">
+			<div>
+				<h1>诶呀</h1>
+				<h2>居然打不开啦</h2>
+				<a href="#">技术帮助</a>
+				<p>
+					您的浏览器版本过低<br/>
+					推荐您使用最新版本的火狐浏览器
+				</p>
+				<img src="img/0.png" alt="加载失败"></img>
+			</div>
+		</canvas>
+		<script type="text/JavaScript">
+			window.onload=function(){  
+				game_reset();  
+			}
+			window.onresize=function(){  
+				game_reset();
+			}   
+			function game_reset(){
+				var w=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+				var h=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				var myh=h*0.98;
+				var myw=myh/960*640;
+				var game_handle=document.getElementById("mygame");
+				game_handle.width=myw;
+				game_handle.height=myh;
+				game_handle.style.top=(h-myh)/2+"px";
+				game_handle.style.left=(w-myw)/2+"px";
+				var game_handle=document.getElementById("mygame");
+			var _game=game_handle.getContext("2d");
+			var grd=_game.createLinearGradient(0,0,0,myh);
+			grd.addColorStop(0,"#ffffff");
+			grd.addColorStop(0.2,"#d3d3d3");
+			grd.addColorStop(1,"#000000");
+			_game.fillStyle=grd;
+			_game.fillRect(0,0,myw,myh);
+			}
+		</script>
+		{{ content }}
+		<noscript>
+			<div>
+				<h1>诶呀</h1>
+				<h2>居然打不开啦</h2>
+				<a href="#">技术帮助</a>
+				<p>
+					您的浏览器不支持JavaScript<br/>
+					推荐您使用最新版本的火狐浏览器
+				</p>
+				<img src="img/0.png" alt="加载失败"></img>
+			</div>
+		</noscript>
+	</body>
+</html>
