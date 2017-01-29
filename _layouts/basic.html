@@ -11,23 +11,23 @@
 				top:0px;
 				left:0px;
 			}
-			div{
-				color:#ffffff;
-				text-align:center;
-			}
 			h1{
 				font-size:80px;
+				text-align:center;
 			}
 			h2{
 				font-size:36px;
+				text-align:center;
 			}
 			a{
 				color:#ffffff;
 				text-decoration:none;
 				font-size:18px;
+				text-align:center;
 			}
 			p{
 				font-size:18px;
+				text-align:center;
 			}
 		</style>
 	</head>
@@ -49,9 +49,7 @@
 		<img id="del" src="img/0.png" alt="加载失败"></img>
 		<script type="text/JavaScript">
 			var delid=document.getElementById("del");
-			for(i=0;i<5;i++){
-				delid[i].parentNode.removeChild(delid[i]);
-			}
+			delid.parentNode.removeChild(delid);
 		</script>
 		<script type="text/JavaScript">
 			window.onload=function(){  
